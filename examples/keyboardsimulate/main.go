@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"runtime"
 	"time"
@@ -20,14 +19,13 @@ func main() {
 		time.Sleep(2 * time.Second)
 	}
 
-	//set keys
-	kb.SetKeys(keybd_event.VK_D, keybd_event.VK_I, keybd_event.VK_R, keybd_event.VK_ENTER)
-
-	//launch
-	err = kb.Launching()
-	fmt.Println("fin")
-	if err != nil {
-
-		log.Fatal(err)
+	for i := 0; i < 10000; i++ {
+		//set keys
+		kb.SetKeys(keybd_event.VK_D, keybd_event.VK_I, keybd_event.VK_R, keybd_event.VK_ENTER)
+		//launch
+		err = kb.Launching()
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 }
