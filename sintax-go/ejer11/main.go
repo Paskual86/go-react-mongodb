@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+/* ----------------------------------- Interface declaration Start ----------------------------------------*/
 type SerVivo interface {
 	estaVivo() bool
 }
@@ -22,6 +23,8 @@ type animal interface {
 type vegetal interface {
 	ClasificacionVegeta() string
 }
+
+/* ----------------------------------- Interface declaration End ------------------------------------------*/
 
 type hombre struct {
 	edad       int
