@@ -100,6 +100,8 @@ func main() {
 	totalCarnivoros := 0
 	Dogo := new(perro)
 	Dogo.carnivoro = true
+	Dogo.estavivo = true
+
 	AnimalesRespirar(Dogo)
 
 	totalCarnivoros += AnimalesCarnivoros(Dogo)
