@@ -15,7 +15,7 @@ func InsertRecord(u models.User) (string, bool, error) {
 	defer cancel()
 
 	db := MongoCN.Database("twitter")
-	col := db.Collection("Users")
+	col := db.Collection("users")
 
 	u.Password, _ = EncryptPassword(u.Password)
 
