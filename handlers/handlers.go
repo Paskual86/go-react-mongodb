@@ -7,11 +7,17 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
+
+	"github.com/Paskual86/go-react-mongodb.git/middlew"
+	"github.com/Paskual86/go-react-mongodb.git/routers"
 )
 
 /*Handlers Functions that allow manage the connection*/
 func Handlers() {
 	router := mux.NewRouter()
+
+	// Armado del registro
+	router.HandleFunc("/register", middlew.DatabaseCheck(routers.Register)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 

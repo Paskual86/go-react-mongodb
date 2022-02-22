@@ -11,7 +11,7 @@ import (
 /*Mongo CN Var*/
 var MongoCN = ConnectDB()
 
-var clientOptions = options.Client().ApplyURI("mongodb+srv://pandrada:e6gawTN23XLla59Y@cluster0.ylcqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+var clientOptions = options.Client().ApplyURI("mongodb+srv://pandrada:<Password>@cluster0.ylcqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
 /*Connect DB: Function allow to connect with the Database*/
 func ConnectDB() *mongo.Client {
