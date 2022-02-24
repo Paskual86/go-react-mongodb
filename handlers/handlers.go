@@ -18,6 +18,7 @@ func Handlers() {
 
 	// Armado del registro
 	router.HandleFunc("/register", middlew.DatabaseCheck(routers.Register)).Methods("POST")
+	router.HandleFunc("/login", middlew.DatabaseCheck(routers.Login)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 
