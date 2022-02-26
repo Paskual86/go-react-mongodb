@@ -5,13 +5,14 @@ import (
 
 	jwt "github.com/dgrijalva/jwt-go"
 
+	"github.com/Paskual86/go-react-mongodb.git/constants"
 	"github.com/Paskual86/go-react-mongodb.git/models"
 )
 
 /*GenerateJWT*/
 func GenerateJWT(t models.User) (string, error) {
 
-	miClave := []byte("MastersdelDesarrollo_grupodeFacebook")
+	miClave := []byte(constants.SECRET_KEY)
 
 	payload := jwt.MapClaims{
 		"email":     t.Email,
