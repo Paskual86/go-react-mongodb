@@ -1,6 +1,7 @@
 package jwt
 
 import (
+	"fmt"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -14,6 +15,8 @@ func GenerateJWT(t models.User) (string, error) {
 
 	miClave := []byte(constants.SECRET_KEY)
 
+	fmt.Println(t.ID)
+
 	payload := jwt.MapClaims{
 		"email":     t.Email,
 		"name":      t.Name,
@@ -21,7 +24,7 @@ func GenerateJWT(t models.User) (string, error) {
 		"birthdate": t.Birthdate,
 		"location":  t.Location,
 		"site":      t.Site,
-		"_id":       t.Id.Hex(),
+		"_id":       t.ID,
 		"exp":       time.Now().Add(time.Hour * 24).Unix(),
 	}
 

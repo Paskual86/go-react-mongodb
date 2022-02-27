@@ -23,7 +23,7 @@ func UsersExists(email string) (models.User, bool, string) {
 
 	err := col.FindOne(ctx, condicion).Decode(&result)
 
-	ID := result.Id.Hex()
+	ID := result.ID.Hex()
 	if err != nil {
 		return result, false, ID
 	}

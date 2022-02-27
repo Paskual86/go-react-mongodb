@@ -24,6 +24,6 @@ func ViewProfile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("context-type", "application/json")
-	w.WriteHeader(http.StatusCreated)
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(profile)
 }

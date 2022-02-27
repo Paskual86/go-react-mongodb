@@ -2,6 +2,7 @@ package db
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/Paskual86/go-react-mongodb.git/models"
@@ -28,5 +29,7 @@ func InsertRecord(u models.User) (string, bool, error) {
 	// Como obtener el ID
 	// TODO: Es muy raro la sentencia de abajo. Es extraño como se llama.
 	ObjID, _ := result.InsertedID.(primitive.ObjectID)
+	fmt.Println(ObjID)
+
 	return ObjID.String(), true, nil
 }
