@@ -11,7 +11,7 @@ import (
 /*Mongo CN Var*/
 var MongoCN = ConnectDB()
 
-var clientOptions = options.Client().ApplyURI("mongodb+srv://pandrada:<password>@cluster0.ylcqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+var clientOptions = options.Client().ApplyURI("mongodb+srv://cluster0.ylcqq.mongodb.net/myFirstDatabase?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority&tlsCertificateKeyFile=./credentials/X509-cert-486224665158591459.pem")
 
 /*Connect DB: Function allow to connect with the Database*/
 func ConnectDB() *mongo.Client {
