@@ -20,7 +20,7 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 
 	var status bool
 
-	status, err = db.UpdateUser(t, UserId)
+	status, err = db.UpdateUser(t, AuthorizatedUserId)
 
 	if err != nil {
 		http.Error(w, "There was some error when we try to update the record. Please retry"+err.Error(), 400)

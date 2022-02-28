@@ -10,8 +10,8 @@ import (
 	jwt "github.com/dgrijalva/jwt-go"
 )
 
-var Email string
-var UserId string
+var AuthorizatedEmail string
+var AuthorizatedUserId string
 
 /*Process Token*/
 func ProcessToken(token string) (*models.Claim, bool, string, error) {
@@ -31,10 +31,10 @@ func ProcessToken(token string) (*models.Claim, bool, string, error) {
 		_, found, _ := db.UsersExists(claims.Email)
 
 		if found {
-			Email = claims.Email
-			UserId = claims.ID.Hex()
+			AuthorizatedEmail = claims.Email
+			AuthorizatedUserId = claims.ID.Hex()
 		}
-		return claims, found, UserId, nil
+		return claims, found, AuthorizatedUserId, nil
 	}
 
 	if !tkt.Valid {
