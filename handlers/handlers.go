@@ -24,6 +24,12 @@ func Handlers() {
 	router.HandleFunc("/inserttweet", middlew.DatabaseCheck(middlew.ValidateJWT(routers.InsertTweet))).Methods("POST")
 	router.HandleFunc("/readtweets", middlew.DatabaseCheck(middlew.ValidateJWT(routers.ReadTweets))).Methods("GET")
 	router.HandleFunc("/deletetweet", middlew.DatabaseCheck(middlew.ValidateJWT(routers.DeleteTweet))).Methods("DELETE")
+
+	router.HandleFunc("/uploadavatar", middlew.DatabaseCheck(middlew.ValidateJWT(routers.UploadAvatar))).Methods("POST")
+	router.HandleFunc("/getavatar", middlew.DatabaseCheck(routers.GetAvatar)).Methods("GET")
+	router.HandleFunc("/uploadbanner", middlew.DatabaseCheck(middlew.ValidateJWT(routers.UploadBanner))).Methods("POST")
+	router.HandleFunc("/getbanner", middlew.DatabaseCheck(routers.GetBanner)).Methods("GET")
+
 	PORT := os.Getenv("PORT")
 
 	if PORT == "" {
