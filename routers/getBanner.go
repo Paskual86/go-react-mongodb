@@ -7,6 +7,7 @@ import (
 
 	"github.com/Paskual86/go-react-mongodb.git/constants"
 	"github.com/Paskual86/go-react-mongodb.git/db"
+	"github.com/Paskual86/go-react-mongodb.git/routers/errors"
 )
 
 func GetBanner(w http.ResponseWriter, r *http.Request) {
@@ -14,7 +15,7 @@ func GetBanner(w http.ResponseWriter, r *http.Request) {
 	ID := r.URL.Query().Get("id")
 
 	if len(ID) < 1 {
-		http.Error(w, "Missing Parameter", http.StatusBadRequest)
+		errors.MissingParameter(w)
 		return
 	}
 
