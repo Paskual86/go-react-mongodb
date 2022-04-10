@@ -4,12 +4,14 @@ import (
 	"context"
 	"log"
 
+	"github.com/Paskual86/go-react-mongodb.git/constants"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 /*Mongo CN Var*/
 var MongoCN = ConnectDB()
+var MongoDatabaseConnection = MongoCN.Database(constants.DATABASE_TWITTER)
 
 var clientOptions = options.Client().ApplyURI("mongodb+srv://cluster0.ylcqq.mongodb.net/myFirstDatabase?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority&tlsCertificateKeyFile=./credentials/X509-cert-486224665158591459.pem")
 
