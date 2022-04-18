@@ -14,7 +14,7 @@ func QueryRelation(value models.Relation) (bool, error) {
 
 	defer cancel()
 
-	col := RelationCollection()
+	col := CollectionRelation()
 
 	condition := bson.M{
 		"userid":         value.UserId,

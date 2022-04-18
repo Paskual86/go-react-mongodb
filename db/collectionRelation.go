@@ -5,6 +5,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func RelationCollection() *mongo.Collection {
+func CollectionRelation() *mongo.Collection {
 	return MongoDatabaseConnection.Collection(constants.COLLECTION_RELATIONS)
 }
