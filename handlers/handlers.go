@@ -34,6 +34,7 @@ func Handlers() {
 	router.HandleFunc("/getrelation", middlew.DatabaseCheck(middlew.ValidateJWT(routers.QueryRelation))).Methods("GET")
 
 	router.HandleFunc("/listusers", middlew.DatabaseCheck(middlew.ValidateJWT(routers.ListUsers))).Methods("GET")
+	router.HandleFunc("/gettweetsfollowers", middlew.DatabaseCheck(middlew.ValidateJWT(routers.GetTweetsFollowers))).Methods("GET")
 
 	PORT := os.Getenv("PORT")
 
